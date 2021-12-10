@@ -1,10 +1,47 @@
-
-
+import { useState, useEffect } from "react";
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import MainContent from "./components/main-content/MainContent";
 
 function App() {
+  const [animeList, setAnimeList] = useState([]);
+  const [topAnime, setTopAnime] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const getTopAnime = async () => {
+    const topReq = await fetch(
+      `https://api.jikan.moe/v3/top/anime/1/bypopularity`
+    ).then((res) => res.json());
+
+    setTopAnime(topReq.top.slice(0, 5));
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    fetchAnime(search);
+  };
+
+  const fetchAnime = async (query) => {
+    const searchReq = await fetch(
+      `https://api.jikan.moe/v3/search/anime?q=${query}$order_by=title&sort=asc&limit=10`
+    ).then((res) => res.json());
+
+    setAnimeList(searchReq.results);
+    console.log(searchReq);
+  };
+
+  useEffect(() => {
+    getTopAnime();
+  }, []);
+
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="App">
+      <Header setSearch={setSearch} handleSearch={handleSearch} />
+        <Sidebar topAnime={topAnime} />
+      <div className="content-wrap">
+        <MainContent search={search} animeList={animeList} />
+      </div>
     </div>
   );
 }
