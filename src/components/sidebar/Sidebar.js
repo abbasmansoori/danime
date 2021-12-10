@@ -3,7 +3,7 @@ import React from "react";
 export default function Sidebar({ topAnime }) {
   return (
     <aside>
-      <h3>Top Anime</h3>
+      <h3>Top 10 Anime</h3>
       <nav>
         {topAnime.map((anime) => (
           <a

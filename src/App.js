@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import MainContent from "./components/main-content/MainContent";
-
+import Footer from "./components/footer/Footer";
 function App() {
   const [animeList, setAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
@@ -13,7 +13,7 @@ function App() {
       `https://api.jikan.moe/v3/top/anime/1/bypopularity`
     ).then((res) => res.json());
 
-    setTopAnime(topReq.top.slice(0, 5));
+    setTopAnime(topReq.top.slice(0, 10));
   };
 
   const handleSearch = (e) => {
@@ -24,7 +24,7 @@ function App() {
 
   const fetchAnime = async (query) => {
     const searchReq = await fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${query}$order_by=title&sort=asc&limit=10`
+      `https://api.jikan.moe/v3/search/anime?q=${query}$order_by=title&sort=asc&limit=20`
     ).then((res) => res.json());
 
     setAnimeList(searchReq.results);
@@ -42,6 +42,7 @@ function App() {
       <div className="content-wrap">
         <MainContent search={search} animeList={animeList} />
       </div>
+      <Footer/>
     </div>
   );
 }
