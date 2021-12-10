@@ -3,8 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
+  text-decoration: none;
 }
-
 
 body {
   background: #1f1e1e;
@@ -25,6 +25,7 @@ header {
     font-size: 36px;
     font-weight: 400;
     text-align: center;
+    text-decoration: none;
 
     strong {
       color: #4d3d94;
@@ -48,7 +49,8 @@ header {
         max-width: 400px;
         padding: 16px;
         border-radius: 16px;
-        background-color: #eee;
+
+        background-color: rgba(238, 238, 238, 0.747);
 
         transition: 0.4s;
 
@@ -59,7 +61,7 @@ header {
         &:focus,
         &:valid {
           background-color: #313131;
-          color: #fff;
+          color: rgb(85, 185, 216);
         }
       }
     }
@@ -68,9 +70,10 @@ header {
 
 h3 {
   text-align: center;
-  color: #b8b8b8;
+  color: #4d3d94;
   font-size: 24px;
   margin-bottom: 20px;
+  text-decoration: none;
 }
 
 aside {
@@ -80,9 +83,8 @@ aside {
     flex-direction: row;
 
     a {
-    
       padding: 8px 16px;
-      
+
       margin: 2px;
       color: rgb(85, 185, 216);
       font-size: 16px;
@@ -98,6 +100,57 @@ aside {
         color: #4d3d94;
         background-color: #040844;
       }
+    }
+  }
+}
+
+.anime-list {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  text-decoration: none;
+}
+
+.anime-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #4d3d943f;
+  color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.6s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  .anime-title {
+    margin: 2px;
+    color: rgb(85, 185, 216);
+    font-size: 16px;
+    font-weight: lighter;
+  }
+
+  .synopsis {
+    margin: 1rem;
+    color: rgb(85, 185, 216);
+    font-size: 16px;
+    font-weight: lighter;
+    font-style: italic;
+  }
+
+  .anime-image {
+    border-radius: 2px;
+    transition: 1s;
+
+    transition: 0.6s;
+
+    &:hover {
+      box-shadow: rgb(85, 185, 216) 0px 0px 10px;
     }
   }
 }
