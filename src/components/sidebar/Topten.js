@@ -1,12 +1,14 @@
 import React from "react";
+import "./top-ten.scss";
 
-export default function Sidebar({ topAnime }) {
+export default function Topten({ topAnime }) {
   return (
-    <aside>
-      <h3>Top 10 Anime</h3>
-      <nav>
+    <section className="section-topten">
+      <h3 className="section-topten__title">Top 10 Anime</h3>
+      <nav className="section-topten__nav ">
         {topAnime.map((anime) => (
           <a
+            className="section-topten__link"
             href={anime.url}
             target="_blank"
             key={anime.mal_id}
@@ -16,6 +18,6 @@ export default function Sidebar({ topAnime }) {
           </a>
         ))}
       </nav>
-    </aside>
+    </section>
   );
 }

@@ -1,19 +1,20 @@
-import React from 'react'
+import React from "react";
+import "./anime-card.scss";
 
-function AnimeCard({anime}) {
-    return (
-        <article className="anime-card" target="_blank" rel="norefferer">
-            <a href={anime.url}>
-                <figure>
-                    <img className="anime-image" src={anime.image_url} alt ="Anime">
-                    </img>
-                </figure>
-                
-            <h3 className="anime-title">{anime.title}</h3>
-                <h3 className="synopsis"> {anime.synopsis}</h3>
-            </a>
-        </article>
-    )
+function AnimeCard({ anime }) {
+  return (
+    <article className="anime-list" target="_blank" rel="norefferer">
+      <a href={anime.url}>
+        <img
+          className="anime-list__anime-image"
+          src={anime.image_url}
+          alt="Anime"
+        ></img>
+        <h3 className="anime-list__anime-title">{anime.title}</h3>
+        <h3 className="anime-list__anime-synopsis"> {anime.synopsis}</h3>
+      </a>
+    </article>
+  );
 }
 
-export default AnimeCard
+export default AnimeCard;

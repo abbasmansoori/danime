@@ -1,0 +1,33 @@
+.footer-main {
+  
+  &__header {
+    color: rgb(85, 185, 216);
+    background-color: #4d3d9454;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+
+    .footer-main__donate {
+      display: flex;
+      width: 5rem;
+      justify-content: space-evenly;
+    }
+
+    .footer-main__icons-right {
+      display: flex;
+      width: 5rem;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__bottom {
+    background-color: #4d3d943f;
+    color: rgba(85, 185, 216, 0.432);
+    padding: 2.5rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
