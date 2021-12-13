@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
-import Topten from "./components/sidebar/Topten";
+import Topten from "./components/section/Topten";
 import MainContent from "./components/main-content/MainContent";
 import Footer from "./components/footer/Footer";
 
