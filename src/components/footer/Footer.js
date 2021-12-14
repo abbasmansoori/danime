@@ -4,11 +4,11 @@ function Footer() {
   return (
     <footer className="footer-main">
       <footer className="footer-main__header">
-        <span className="footer-main__donate">
+        <span className="footer-main__header__donate">
           <h4>Donate</h4>
           <i class="fas fa-donate"></i>
         </span>
-        <div className="footer-main__icons-right">
+        <div className="footer-main__header__icons-right">
           <h4>Chat</h4>
           <i class="fab fa-discord"></i>
           <i class="fab fa-twitter"></i>

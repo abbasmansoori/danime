@@ -8,13 +8,19 @@
     justify-content: space-between;
     padding: 1em;
 
-    .footer-main__donate {
+    &__donate {
       display: flex;
       width: 5rem;
       justify-content: space-evenly;
+      transform: scale(1);
+      transition: all 500ms ease;
+      &:hover{
+        transform: scale(1.2);
+        transition: all 500ms ease;
+      }
     }
 
-    .footer-main__icons-right {
+    &__icons-right {
       display: flex;
       width: 5rem;
       justify-content: space-evenly;
